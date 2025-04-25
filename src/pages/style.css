@@ -1,0 +1,463 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: red;
+}
+
+.hero-content {
+    position: relative;
+    height: 900px; 
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                      url('public/assets/images/Header.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centered-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    padding: 20px;
+}
+
+.slogan {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.buy-button {
+    background-color: red;
+    color: #1a1a1a;
+    padding: 1.2rem 4rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.buy-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(234, 30, 30, 0.5);
+}
+
+
+.hero-content::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+
+@media (max-width: 768px) {
+    .slogan {
+        font-size: 2.5rem;
+    }
+    
+    .buy-button {
+        padding: 1rem 3rem;
+        font-size: 1.1rem;
+    }
+    
+    .nav-links ul {
+        gap: 1.5rem;
+    }
+}
+.product-showcase {
+    padding: 4rem 2rem;
+    background: #0a0a0a;
+    color: white;
+}
+
+.product-container {
+    display: flex;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-images {
+    flex: 1;
+    position: relative;
+    min-height: 500px;
+}
+
+.product-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-images img.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(236, 15, 15, 0.8);
+    border: none;
+    color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.carousel-btn.prev { left: 20px; }
+.carousel-btn.next { right: 20px; }
+
+.carousel-btn:hover {
+    background: #ff0000;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.product-details {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+.gender-options {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.gender {
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gender.active {
+    background: #00ff9d;
+    color: #0a0a0a;
+}
+
+
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+    }
+    
+    .product-images {
+        min-height: 400px;
+    }
+}
+
+.product-details {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    width: 100%;
+}
+
+.product-details.active {
+    display: block;
+    opacity: 1;
+    position: relative;
+}
+
+.product-details-container {
+    position: relative;
+    flex: 1;
+}
+
+.product-details-container h2 {
+    margin-bottom: 30px;
+}
+.buy-button {
+    margin-top: 30px;
+}
+.games-section {
+    padding: 4rem 0;
+    background: #0a0a0a;
+    color: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.game-card {
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.game-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.game-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.game-card:hover .game-image {
+    transform: translateY(-10px);
+}
+
+
+@media (max-width: 1200px) {
+    .games-grid {
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 992px) {
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+.site-footer {
+    background-color: #0a0a0a;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 4rem;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.copyright {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.back-to-top {
+    background-color: #00ff9d;
+    color: #0a0a0a;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        position: static;
+        margin-top: 1rem;
+    }
+}
+
+.home-page {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .home-page .product-showcase {
+    padding: 4rem 2rem;
+    background: #0a0a0a;
+    color: white;
+  }
+  
+  /* Add this for the carousel */
+  .home-page .product-images img:not(.active) {
+    display: none;
+  }
+  
+  .home-page .product-details:not(.active) {
+    display: none;
+  }
+  
+  .home-page .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .home-page .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .home-page .carousel-btn.next {
+    right: 10px;
+  }
+  /* Add to both CSS files */
+.user-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .user-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .login-container {
+    min-height: 100vh;
+    background: #0a0a0a;
+    color: white;
+  }
+  
+  .login-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #1a1a1a;
+    border-radius: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #0a0a0a;
+    color: white;
+  }
+  
+  .error {
+    color: red;
+    margin-bottom: 1rem;
+  }
+  
+  .signout-button {
+    background: red;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+  }
+
+  

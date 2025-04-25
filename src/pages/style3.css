@@ -1,0 +1,140 @@
+.dashboard-page {
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    color: white;
+  }
+  
+ 
+  .header-container {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    background-color: black;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+
+  .dashboard-centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+  }
+  
+ 
+  .dashboard-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+.dashboard-content h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #e31010;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 30px;
+  }
+  
+  .profile-info,
+  .orders,
+  .addresses {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-info h2,
+  .orders h2,
+  .addresses h2 {
+    color: #ff0000;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #333;
+    font-size: 1.5rem;
+  }
+  
+
+  .profile-info p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  
+  .orders {
+    min-height: 200px;
+  }
+  
+  .orders p {
+    font-style: italic;
+    color: #888;
+  }
+  
+
+  .addresses p {
+    margin: 0.8rem 0;
+    line-height: 1.6;
+  }
+  
+
+  .signout-button {
+    display: block;
+    width: 200px;
+    margin: 3rem auto 0;
+    padding: 1rem;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .signout-button:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .dashboard-content {
+      width: 95%;
+      padding: 0 1rem;
+    }
+    
+    .profile-info,
+    .orders,
+    .addresses {
+      padding: 1.5rem;
+    }
+    
+    .dashboard-content h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .login-form h2 {
+    text-align: center;
+  }
+  .login-form button {
+    width: 100%;
+  }
+  .login-form p {
+    margin-top: 20px;
+    text-align: center;
+  }
